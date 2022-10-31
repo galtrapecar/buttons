@@ -1,0 +1,257 @@
+.present_button {
+    font-family: 'Indie Flower', cursive;
+    background-color: #c9b090;
+    height: 100vh;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.present_button .present_wrapper_wrapper {
+    position: relative;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.present_button .present_wrapper {
+    min-width: 400px;
+    padding: 2px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 900px;
+    background-color: white;
+    border-radius: 15px;
+    transition: min-width .3s;
+}
+
+.present_wrapper .present_button_text {
+    position: absolute;
+    white-space: nowrap;
+    z-index: 999;
+    font-size: 23px;
+    transition: opacity .1s;
+}
+
+.present_overlay {
+    position: absolute;
+    width: 400px;
+    height: 152px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.body {
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.present_body {
+    opacity: .3;
+}
+
+.present_button .present_body {
+    width: 150px;
+    height: 150px;
+    top: 15px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .3s;
+}
+
+.present_button .present_body_front {
+    position: absolute;
+    width: 150px;
+    height: 130px;
+    transform: rotate(0) translateZ(75px);
+}
+
+.present_body .present_body_side {
+    position: absolute;
+    width: 150px;
+    height: 130px;
+    transform: rotateY(90deg) translateZ(75px);
+}
+
+.present_body .present_body_top {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform: rotateX(90deg) translateZ(75px);
+}
+
+.present_body .present_body_back {
+    position: absolute;
+    width: 150px;
+    height: 130px;
+    transform: rotateX(0deg) translateZ(-75px);
+}
+
+.present_body .present_body_left {
+    position: absolute;
+    width: 150px;
+    height: 130px;
+    transform: rotateY(-90deg) translateZ(75px);
+}
+
+.present_lid {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 3s;
+}
+
+.present_lid_top {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    background-color: #f1f1f1;
+    transform: rotateX(90deg) translateZ(90px) translateY(0px) translateX(-5px);
+}
+
+.present_lid_front {
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    background-color: #DFDBDC;
+    transform: translateZ(80px) translateY(-10px) translateX(-5px);
+}
+
+.present_lid_left {
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    background-color: #E5EAEC;
+    transform: rotateY(90deg) translateZ(-85px) translateY(-10px) translateX(0px);
+}
+
+.present_lid_right {
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    transform: rotateY(90deg) translateZ(75px) translateY(-10px) translateX(0px);
+}
+
+.present_lid_back {
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    transform: rotateY(0deg) translateZ(-80px) translateY(-10px) translateX(-5px);
+}
+
+.present_wrapper .stripe {
+    opacity: 0;
+    width: 15%;
+    background-image: linear-gradient(45deg, #B2A2CD 25%, #5F5370 25%, #5F5370 50%, #B2A2CD 50%, #B2A2CD 75%, #5F5370 75%, #5F5370 100%);
+    background-size: 56.57px 56.57px;
+}
+
+.present_wrapper .lid {
+    display: flex;
+    justify-content: center;
+}
+
+.present_wrapper .lid .stripe {
+    background-position-y: 10px;
+}
+
+.present_wrapper .lid .left_stripe {
+    background-image: linear-gradient(-45deg, #B2A2CD 25%, #5F5370 25%, #5F5370 50%, #B2A2CD 50%, #B2A2CD 75%, #5F5370 75%, #5F5370 100%);
+    background-position-y: 27px;
+}
+
+.present_lid_top .stripe {
+    transform: translateX(12px);
+}
+
+.present_wrapper .present_lid_top .stripe_cross {
+    position: relative;
+    background-position-y: -7px;
+    transform: rotate(90deg) translateY(12px);
+}
+
+.present_button .button_stripe {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 18px;
+    height: 154px;
+    z-index: 999;
+    background-image: linear-gradient(45deg, #B2A2CD 25%, #5F5370 25%, #5F5370 50%, #B2A2CD 50%, #B2A2CD 75%, #5F5370 75%, #5F5370 100%);
+    background-size: 56.57px 56.57px;
+}
+
+.present_button .present_wrapper.shorten {
+    min-width: 160px;
+}
+
+.present_button .present_wrapper.unshorten {
+   min-width: 400px;
+}
+
+.present_button .present_wrapper.perspective {
+    animation: perspective .5s linear forwards;
+}
+
+.present_button .present_wrapper.unperspective {
+    animation: unperspective .40s linear forwards;
+}
+
+.present_body.rotate {
+    animation: rotate .5s linear forwards;
+}
+
+.present_body.unrotate {
+    animation: unrotate .5s linear forwards;
+}
+
+@keyframes perspective {
+
+    from {
+        perspective-origin: 50% 50%;
+    }
+
+    to {
+        perspective-origin: 50% -150%;
+    }
+}
+
+@keyframes unperspective {
+    from {
+        perspective-origin: 50% -150%;
+    }
+
+    to {
+        perspective-origin: 50% 50%;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(765deg);
+    }
+}
+
+
+@keyframes unrotate {
+
+    from {
+        transform: rotateY(765deg);
+    }
+
+    to {
+        transform: rotateY(0deg);
+    }
+}

@@ -1,0 +1,43 @@
+.boat {
+    position: relative;
+    height: 100vh;
+    background-color: #9FD05E;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boat_button {
+    position: relative;
+    width: 400px;
+    height: 140.8888888px;
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    overflow: hidden;
+}
+
+.boat_button h1 {
+    position: relative;
+    color: #fff;
+    font-size: 45px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    display: inline;
+    top: 30%;
+}
+
+.buttonBoat {
+    width: 80%;
+    top: 32%;
+    left: -80%;
+    position: absolute;
+}
+
+.buttonimg {
+    position: absolute;
+    width: 100%;
+    display: block;
+}

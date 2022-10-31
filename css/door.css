@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.button {
+    background-color: #CC3238;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.btnWrap {
+    width: 400px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn {
+    position: relative;
+    z-index: 99;
+    width: 400px;
+    height: 120px;
+    border: 10px solid #fff;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    align-content: center;
+    transition: width .3s;
+    overflow: hidden;
+}
+
+.btnInter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background: #CC3238;
+    display: flex;
+    align-content: center;
+    transition: width .3s;
+    overflow: hidden;
+}
+
+.btn h1 {
+    z-index: 99;
+    color: #fff;
+    align-self: center;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    width: 80%;
+    transition: .5s;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.btn .arrow {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    align-self: center;
+    position: absolute;
+    right: 2%;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 35% 100%, 60% 50%, 35% 0%);
+    animation: chevron .3s;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btnWrap:hover .btnInter {
+    animation: open .5s forwards;
+    animation-delay: .3s;
+}
+
+.btnWrap:hover .btn {
+    width: 90px;
+    cursor: pointer;
+}
+
+.btnWrap:hover .btnInter {
+    width: 90px;
+}
+
+.btnWrap:hover .arrow {
+    animation: circle .8s forwards;
+}
+
+.btnWrap:hover h1 {
+    margin-left: -400px;
+}
+
+@keyframes open {
+    0% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);}
+    100% {clip-path: polygon(0 0, 67% 9%, 67% 91%, 0% 100%);}
+}
+
+@keyframes circle {
+    0% {clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 35% 100%, 60% 50%, 35% 0%); transform: scale(1);}
+    12.5% {clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 0 49%, 0% 0%); transform: scale(.8);}
+    25% {clip-path: circle(70.7% at 50% 50%); transform: scale(.6); right: -0.5%; top: 20%;}
+    37.5% {clip-path: circle(50% at 50% 50%); transform: scale(.4); right: -3%; top: 32%;}
+    100% {clip-path: circle(50% at 50% 50%); transform: scale(.2); right: -2.5%; top: 32%;}
+}
+
+@keyframes chevron {
+    100% {clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 35% 100%, 60% 50%, 35% 0%); transform: scale(1);}
+    50% {clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 0 49%, 0% 0%); transform: scale(.8);}
+    25% {clip-path: circle(70.7% at 50% 50%); transform: scale(.6); right: -0.5%; top: 20%;}
+    0% {clip-path: circle(50% at 50% 50%); transform: scale(.4); right: -3%; top: 32%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Regular'), url('MYRIADPRO-REGULAR.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Condensed';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Condensed'), url('MYRIADPRO-COND.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Condensed Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Condensed Italic'), url('MYRIADPRO-CONDIT.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Light'), url('MyriadPro-Light.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Semibold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Semibold'), url('MYRIADPRO-SEMIBOLD.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Semibold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Semibold Italic'), url('MYRIADPRO-SEMIBOLDIT.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Bold Condensed';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Bold Condensed'), url('MYRIADPRO-BOLDCOND.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Bold'), url('MYRIADPRO-BOLD.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Bold Italic'), url('MYRIADPRO-BOLDIT.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Myriad Pro Bold Condensed Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Bold Condensed Italic'), url('MYRIADPRO-BOLDCONDIT.woff') format('woff');
+}

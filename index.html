@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="icon" href="./img/logo.svg"> -->
+    <link rel="stylesheet" href="./css/door.css"/>
+    <link rel="stylesheet" href="./css/boat.css"/>
+    <link href="./css/present.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+    
+    <title>BUTTONS</title>
+  </head>
+  <body>
+
+  <section class="button">
+    <div class="btnWrap">
+      <button class="btn" onclick="setTimeout(function(){window.location.href='index.html'}, 800);">
+        <div class="btnInter"></div>
+          <h1>ORDER NOW</h1>
+        <div class="arrow"></div>
+      </button>
+    </div>
+  </section>
+
+  <section class="boat">
+    <div class="boat_button">
+      <img class="buttonimg" src="./img/button.svg" alt="" draggable="false" ondragstart="return false;">
+      <img class="buttonBoat" src="./img/buttonBoat.svg" alt="" draggable="false" ondragstart="return false;">
+      <h1>BOOK NOW!</h1>
+  </div>
+  </section>
+
+  <div class="present_button">
+    <div class="present_wrapper_wrapper">
+        <div class="present_wrapper">
+            <div class="button_stripe"></div>
+            <div class="present_button_text"><h1>FREE GIFTS!</h1></div>
+            <div class="present_body">
+                <div class="present_lid">
+                    <div class="present_lid_top"><div class="stripe"></div><div class="stripe_cross stripe"></div></div>
+                    <div class="present_lid_front lid"><div class="stripe"></div></div>
+                    <div class="present_lid_left lid"><div class="stripe left_stripe"></div></div>
+                    <div class="present_lid_back lid"><div class="stripe"></div></div>
+                    <div class="present_lid_right lid"><div class="stripe"></div></div>
+                </div>
+        
+                <div class="present_body_front body"><div class="stripe"></div></div>
+                <div class="present_body_top body"></div>
+                <div class="present_body_side body"><div class="stripe"></div></div>
+                <div class="present_body_left body"><div class="stripe"></div></div>
+                <div class="present_body_back body"><div class="stripe"></div></div>
+            </div>
+        </div>
+        <div class="present_overlay"></div>
+    </div>
+</div>
+
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/boat_style.js"></script>
+  <script src="./js/boat_index.js"></script>
+  <script src="./js/present.js"></script>
+  </body>
+</html>

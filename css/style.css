@@ -1,0 +1,486 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #fff;
+}
+
+.headerWrap {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: transform .3s;
+    z-index: 9999;
+}
+
+/* Header */
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    background-color: #393939;
+    display: flex;
+    align-items: center;
+}
+
+.header svg {
+    height: 13px;
+    align-self: center;
+}
+
+.header a {
+    color: #fff;
+    font-size: 13px;
+    margin-left: 5px;
+    height: 100%;
+}
+
+.header .mail {
+    margin-left: 5px;
+    display: flex;
+}
+
+.header .phone {
+    display: flex;
+    margin-left: 15px;
+}
+
+.mailPhone {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 15px;
+}
+
+/* /Header */
+
+/* Nav */
+
+.nav {
+    position: fixed;
+    z-index: 9999;
+    height: 85px;
+    width: 100%;
+    filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.4));
+    -moz-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.4));
+    -ms-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.4));
+    -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.4));
+}
+
+.nav img {
+    position: absolute;
+    height: 85px;
+    top: -1px;
+}
+
+.nav .navRest {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    height: 85px;
+    background-color: #CC3238;
+    /* background-color: #FC1312; */
+    width: 100%;
+
+    display: flex;
+    align-content: center;
+}
+
+.nav .navRest .ul {
+    width: 40%;
+    position: absolute;
+    right: 250px;
+    list-style: none;
+    display: table;
+    text-align: center;
+    align-self: center;
+}
+
+.nav .navRest .ul li {
+    display: table-cell;
+}
+
+.nav .navRest .ul li a {
+    position: relative;
+    padding: 5px 20px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.nav .navRest .ul li a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0%;
+}
+
+.nav .navRest .ul li a:hover:after {
+    width: 100%;
+    left: 0;
+    background: #fff;
+}
+
+/* /Nav */
+
+/* Button */
+
+.btnWrap {
+    position: absolute;
+    width: 200px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    right: 10px;
+    align-self: center;
+}
+
+.btn {
+    position: relative;
+    z-index: 99;
+    width: 200px;
+    height: 60px;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    align-content: center;
+    transition: width .3s;
+    overflow: hidden;
+}
+
+.btnInter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #CC3238;
+    display: flex;
+    align-content: center;
+    transition: width .3s;
+    overflow: hidden;
+}
+
+.btn h1 {
+    z-index: 99;
+    color: #fff;
+    align-self: center;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    width: 80%;
+    transition: .5s;
+    margin-left: 0;
+}
+
+.btn .arrow {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    align-self: center;
+    position: absolute;
+    right: 2%;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 35% 100%, 60% 50%, 35% 0%);
+    animation: chevron .3s;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btnWrap:hover .btnInter {
+    animation: open .5s forwards;
+    animation-delay: .3s;
+}
+
+.btnWrap:hover .btn {
+    width: 45px;
+    cursor: pointer;
+}
+
+.btnWrap:hover .btnInter {
+    width: 45px;
+}
+
+.btnWrap:hover .arrow {
+    animation: circle .8s forwards;
+}
+
+.btnWrap:hover h1 {
+    margin-left: -400px;
+}
+
+@keyframes open {
+    0% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);}
+    100% {clip-path: polygon(0 0, 67% 9%, 67% 91%, 0% 100%);}
+}
+
+@keyframes circle {
+    0% {clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 35% 100%, 60% 50%, 35% 0%); transform: scale(1);}
+    12.5% {clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 0 49%, 0% 0%); transform: scale(.8);}
+    25% {clip-path: circle(70.7% at 50% 50%); transform: scale(.6); right: -0.5%; top: 20%;}
+    37.5% {clip-path: circle(50% at 50% 50%); transform: scale(.4); right: -3%; top: 32%;}
+    100% {clip-path: circle(50% at 50% 50%); transform: scale(.2); right: -2.5%; top: 32%;}
+}
+
+@keyframes chevron {
+    100% {clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 35% 100%, 60% 50%, 35% 0%); transform: scale(1);}
+    50% {clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 0 49%, 0% 0%); transform: scale(.8);}
+    25% {clip-path: circle(70.7% at 50% 50%); transform: scale(.6); right: -0.5%; top: 20%;}
+    0% {clip-path: circle(50% at 50% 50%); transform: scale(.4); right: -3%; top: 32%;}
+}
+
+/* /Button */
+
+.bannerText {
+    position: absolute;
+    z-index: 999;
+    top: 25%;
+    right: 0;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerText .h1 {
+    font-family: Open Sans, sans-serif;
+    color: #242424;
+    z-index: 999;
+    font-size: 85px;
+    width: 100%;
+    text-align: center;
+}
+
+.bannerText span {
+    font-size: 75px;
+    font-weight: 500;
+    font-family: Open Sans, sans-serif !important;
+}
+
+.bannerText h2 {
+    font-family: Open Sans, sans-serif;
+    color: #242424;
+    z-index: 999;
+    font-size: 35px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    margin-top: 150px;
+    padding-right: 19px;
+}
+
+.cnfBtn {
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    width: 300px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cnfBtn img {
+    display: block;
+}
+
+.cnfBtn .arrow {
+    position: relative;
+    min-width: 25px;
+    min-height: 25px;
+    background-color: #242424;
+    align-self: center;
+    margin-left: 10px;
+    clip-path: polygon(22% 0, 48% 50%, 22% 100%, 0% 100%, 25% 50%, 0% 0%);
+    transition: all .3s;
+}
+
+.cnfBtn:hover .arrow {
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media ( max-width: 2000px ) {
+    .bannerText {
+        top: 22%;
+        width: 60%;
+    }
+
+    .bannerText span {
+        font-size: 55px;
+    }
+    
+    .bannerText .h1 {
+        font-size: 65px;
+    }
+    
+    .bannerText h2 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-top: 100px;
+        padding-right: 19px;
+    }
+
+    .cnfBtn {
+        margin-top: 20px;
+        width: 250px;
+    }
+    
+    .cnfBtn .arrow {
+        min-width: 22px;
+        min-height: 22px;
+        margin-left: 8px;
+    }
+    
+    .cnfBtn:hover .arrow {
+        margin-left: 16px;
+    }
+    
+}
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .nav img {
+        height: 50px;
+    }
+    
+    .nav .navRest {
+        height: 50px;
+    }
+
+    .mailPhone {
+        width: 100%;
+        font-weight: 700;
+    }
+
+    .phone {
+        position: absolute;
+        right: -5px;
+    }
+
+    .mail {
+        position: relative;
+        left: 15px;
+    }
+    
+    /* btn */
+    .btnWrap {
+        width: 99.9975px;
+        right: 5px;
+    }
+    
+    .btn {
+        border-radius: 3px;
+        width: 99.9975px;
+        height: 30px;
+        border: 2.4975px solid #fff;
+    }
+    
+    .btnInter {
+        width: 99.9975px;
+    }
+    
+    .btn h1 {
+        font-size: 11.25px;
+    }
+
+    .btn .arrow {
+        width: 12.5025px;
+        height: 12.5025px;
+    }
+
+    .btnWrap:hover .btn {
+        width: 22.5px;
+    }
+    
+    .btnWrap:hover .btnInter {
+        width: 22.5px;
+    }
+
+    /*__banner__*/
+
+    .bannerText {
+        top: 22%;
+        width: 100%;
+    }
+
+    .bannerText span {
+        font-size: 25px;
+    }
+    
+    .bannerText .h1 {
+        font-size: 30px;
+    }
+    
+    .bannerText h2 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 70px;
+        padding-right: 19px;
+    }
+
+    .cnfBtn {
+        margin-top: 15px;
+        width: 200px;
+    }
+
+    .cnfBtn img {
+        max-width: 200px;
+    }
+    
+    .cnfBtn .arrow {
+        min-width: 22px;
+        min-height: 22px;
+        margin-left: 8px;
+    }
+    
+    .cnfBtn:hover .arrow {
+        margin-left: 16px;
+    }
+}
